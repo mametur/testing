@@ -7,19 +7,19 @@
  * @param {string} str - the string to check for enthusiasm
  * @returns {boolean}
  */
-const isCurious = _;
+const isCurious = (val) => val === 'huh?';
 
 // this works! no need to change it
 const find = (arr, callback) => {
-  let found;
-  for (let entry of arr) {
-    const isTheThing = callback(entry);
-    if (isTheThing) {
-      found = entry;
-      break;
-    }
-  }
-  return found;
+	let found;
+	for (let entry of arr) {
+		const isTheThing = callback(entry);
+		if (isTheThing) {
+			found = entry;
+			break;
+		}
+	}
+	return found;
 };
 
 // returns undefined if the array is empty
@@ -45,4 +45,3 @@ const _4_expect = 'huh?';
 const _4_actual = find(['huh', 'huh?', 'what?'], isCurious);
 const _4_test = _4_actual === _4_expect;
 console.assert(_4_test, 'Test 4');
-

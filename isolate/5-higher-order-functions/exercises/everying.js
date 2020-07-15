@@ -7,19 +7,23 @@
  * @param {any} val
  * @returns {boolean}
  */
-const isFalsy = _;
-
+const isFalsy = (array) => {
+	if (!Boolean(array)) {
+		return true;
+	} else {
+		return false;
+	}
+};
 
 // this works!  no need to change it
 const every = (arr, callback) => {
-  let allAreTrue = true;
-  for (let entry of arr) {
-    const isTrue = callback(entry);
-    allAreTrue = isTrue && allAreTrue;
-  }
-  return allAreTrue;
+	let allAreTrue = true;
+	for (let entry of arr) {
+		const isTrue = callback(entry);
+		allAreTrue = isTrue && allAreTrue;
+	}
+	return allAreTrue;
 };
-
 
 // an empty array returns true
 const _1_expect = true;
@@ -44,4 +48,3 @@ const _4_expect = false;
 const _4_actual = every(['', 0, 'hello', null, false], isFalsy);
 const _4_test = _4_actual === _4_expect;
 console.assert(_4_test, 'Test 4');
-

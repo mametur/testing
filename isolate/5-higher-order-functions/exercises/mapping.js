@@ -1,6 +1,7 @@
 'use strict';
 
-const deepCompare = (actual, expect) => actual === expect || Object.is(actual, expect) || (Object(actual) === actual && Object(expect) === expect) && (Array.isArray(actual) && Array.isArray(expect) && actual.length === expect.length && expect.every((expect, index) => deepCompare(actual[index], expect)));
+const deepCompare = (actual, expect) =>
+	actual === expect || Object.is(actual, expect) || (Object(actual) === actual && Object(expect) === expect && Array.isArray(actual) && Array.isArray(expect) && actual.length === expect.length && expect.every((expect, index) => deepCompare(actual[index], expect)));
 
 // write truthiness to pass the tests
 
@@ -9,16 +10,16 @@ const deepCompare = (actual, expect) => actual === expect || Object.is(actual, e
  * @param {any} val - the value to convert
  * @returns {string} "truey" or "falsey"
  */
-const truthiness = _;
+const truthiness = (val) => Boolean(val) + 'y';
 
 // this works! no need to change it
 const map = (arr, callback) => {
-  const mappedEntries = [];
-  for (let entry of arr) {
-    const mapped = callback(entry);
-    mappedEntries.push(mapped);
-  }
-  return mappedEntries;
+	const mappedEntries = [];
+	for (let entry of arr) {
+		const mapped = callback(entry);
+		mappedEntries.push(mapped);
+	}
+	return mappedEntries;
 };
 
 // returns an empty array for an empty array
