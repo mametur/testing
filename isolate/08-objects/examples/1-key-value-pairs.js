@@ -8,9 +8,9 @@ const milk = 'a white beverage';
 // maybe it's time for this: object literal declaration
 //  an object with key/value pairs
 const foods = {
-  bread: 'for dipping',
-  chili: 'a soup',
-  milk: 'drink it'
+	bread: 'for dipping',
+	chili: 'a soup',
+	milk: 'drink it',
 };
 
 // access individual entries with a . followed by the key
